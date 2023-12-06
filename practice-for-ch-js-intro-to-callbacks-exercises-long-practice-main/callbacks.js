@@ -41,8 +41,10 @@ class Clock {
 }
 
 
+const readline = require('readline');
 
-const reader = readline.createInterface({
+
+reader = readline.createInterface({
     input: process.stdin,
     output: process.stdout
   });
@@ -56,7 +58,7 @@ function addNumbers (sum, numsLeft, completionCallback) {
         })
         addNumbers(sum, numsLeft - 1, completionCallback)
     }
-    
+    reader.close();
 }
 
 addNumbers(0, 3, sum => console.log(`Total Sum: ${sum}`));
